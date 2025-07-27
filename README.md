@@ -1,17 +1,32 @@
-<<<<<<< HEAD
-# React + Vite
+# 🔐 Decentralized Wallet Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A secure, client-side crypto wallet generator for **Solana** and **Ethereum**. Instantly create BIP39-compliant seed phrases and derive multiple wallet addresses — all within your browser.
 
-Currently, two official plugins are available:
+![screenshot](./screenshot.png) <!-- Add your actual screenshot path -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# crypto-wallet
-A secure, client-side wallet generator for Solana and Ethereum. Instantly create seed phrases, manage multiple wallets, and view private keys — all in your browser, with no data ever leaving your device.
->>>>>>> 51110b1793392ce0b5010a89d09588d446cb1b66
+- ⚡ Generate secure BIP39 seed phrases (mnemonics)
+- 🔐 Solana and Ethereum HD wallet support
+- 🧠 Fully client-side — no data is ever sent to a server
+- 🧱 BIP44/BIP32 hierarchical deterministic key derivation
+- 🔍 View public and private keys instantly
+- 💡 Minimal, dark-themed UI using TailwindCSS
+
+---
+
+## 🚀 Live Demo
+
+[👉 Click here to launch the app](https://your-deployment-url.com) <!-- Replace with actual deployment URL -->
+
+---
+
+## 📦 Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/habibsheikhh/crypto-wallet.git
+cd crypto-wallet
