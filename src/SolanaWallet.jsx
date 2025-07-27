@@ -5,7 +5,7 @@ import { Keypair, Connection, PublicKey } from "@solana/web3.js";
 import nacl from "tweetnacl";
 import { Eye, EyeOff, Trash2, Copy } from "lucide-react";
 
-const SOLANA_RPC = "https://api.devnet.solana.com"; // or devnet: https://api.devnet.solana.com
+const SOLANA_RPC = "https://api.devnet.solana.com";
 
 export function SolanaWallet({ mnemonic }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,10 +54,10 @@ export function SolanaWallet({ mnemonic }) {
 
   return (
     <div
-      className="w-full max-w-4xl space-y-4"
+      className="w-full max-w-4xl space-y-4 px-2 sm:px-0"
       style={{ fontFamily: '"JetBrains Mono", monospace' }}
     >
-      <div className="flex flex-wrap gap-4 items-center">
+      <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
         <button
           onClick={async () => {
             if (!mnemonic) return;
@@ -81,7 +81,7 @@ export function SolanaWallet({ mnemonic }) {
             setCurrentIndex((prev) => prev + 1);
             setWalletName("");
           }}
-          className="bg-gray-800 hover:bg-gray-700 active:bg-black text-white px-5 py-2 rounded-lg shadow transition"
+          className="bg-gray-800 hover:bg-gray-700 active:bg-black text-white px-5 py-2 rounded-lg shadow transition w-full sm:w-auto"
         >
           Add Solana Wallet
         </button>
@@ -100,7 +100,7 @@ export function SolanaWallet({ mnemonic }) {
             key={i}
             className="relative bg-gray-800 p-4 rounded-xl text-sm text-purple-300 shadow"
           >
-            <div className="mb-3 text-purple-200 text-base font-semibold">
+            <div className="mb-3 text-purple-200 text-base font-semibold break-words">
               {wallet.name}{" "}
               <span className="text-xs text-purple-400">
                 (m/44'/501'/{wallet.index}'/0')
@@ -115,7 +115,7 @@ export function SolanaWallet({ mnemonic }) {
               <Trash2 size={16} />
             </button>
 
-            <div className="mb-2 overflow-x-auto break-all">
+            <div className="mb-2 overflow-x-auto break-words">
               <strong>SOL Public:</strong> {wallet.publicKey}
               <button
                 onClick={() => copyToClipboard(wallet.publicKey)}
@@ -126,7 +126,7 @@ export function SolanaWallet({ mnemonic }) {
               </button>
             </div>
 
-            <div className="overflow-x-auto break-all">
+            <div className="overflow-x-auto break-words">
               <strong>Private:</strong>{" "}
               {visibleKeys[i] ? wallet.privateKey : "•".repeat(16)}
               <button
@@ -147,7 +147,6 @@ export function SolanaWallet({ mnemonic }) {
               )}
             </div>
 
-            {/* ✅ Balance Section */}
             <div className="mt-4 text-purple-200 text-sm">
               Balance:{" "}
               <span className="text-purple-100 font-mono">

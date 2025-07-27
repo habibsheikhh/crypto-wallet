@@ -7,7 +7,7 @@ export const EthWallet = ({ mnemonic }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [wallets, setWallets] = useState([]);
   const [visibleKeys, setVisibleKeys] = useState({});
-  const [walletName, setWalletName] = useState(""); // ✅ new state
+  const [walletName, setWalletName] = useState("");
 
   const toggleVisibility = (index) => {
     setVisibleKeys((prev) => ({
@@ -31,13 +31,10 @@ export const EthWallet = ({ mnemonic }) => {
 
   return (
     <div
-      className="w-full max-w-4xl space-y-4"
+      className="w-full max-w-4xl space-y-4 px-2 sm:px-0"
       style={{ fontFamily: '"JetBrains Mono", monospace' }}
     >
-      <div className="flex flex-wrap gap-4 items-center">
-        
-
-        {/* ✅ Create wallet button */}
+      <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
         <button
           onClick={async () => {
             if (!mnemonic) return;
@@ -52,17 +49,17 @@ export const EthWallet = ({ mnemonic }) => {
               {
                 address: wallet.address,
                 privateKey: wallet.privateKey,
-                name: walletName || `Wallet ${currentIndex + 1}`, // ✅ Save name
+                name: walletName || `Wallet ${currentIndex + 1}`,
               },
             ]);
             setCurrentIndex((prev) => prev + 1);
-            setWalletName(""); // ✅ Clear input after adding
+            setWalletName("");
           }}
-          className="bg-gray-800 hover:bg-gray-700 active:bg-black text-white px-5 py-2 rounded-lg shadow transition"
+          className="bg-gray-800 hover:bg-gray-700 active:bg-black text-white px-5 py-2 rounded-lg shadow transition w-full sm:w-auto"
         >
           Add ETH Wallet
         </button>
-        {/* ✅ Wallet name input */}
+
         <input
           value={walletName}
           onChange={(e) => setWalletName(e.target.value)}
@@ -88,13 +85,12 @@ export const EthWallet = ({ mnemonic }) => {
                 <Trash2 size={18} />
               </button>
 
-              {/* ✅ Wallet name displayed */}
-              <div className="mb-2 text-white font-semibold">
-                 {wallet.name}{" "}
-                <span className="text-gray-400">({derivationPath})</span>
+              <div className="mb-2 text-white font-semibold break-words">
+                {wallet.name}
+                <span className="text-gray-400"> ({derivationPath})</span>
               </div>
 
-              <div className="mb-2 flex flex-wrap items-center gap-2">
+              <div className="mb-2 flex flex-wrap items-start gap-2 overflow-x-auto">
                 <strong>ETH Address:</strong>
                 <span className="break-all">{wallet.address}</span>
                 <button
@@ -106,7 +102,7 @@ export const EthWallet = ({ mnemonic }) => {
                 </button>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-wrap items-start gap-2 overflow-x-auto">
                 <strong>Private:</strong>
                 <span className="break-all">
                   {visibleKeys[i] ? wallet.privateKey : "•".repeat(16)}

@@ -8,11 +8,10 @@ export default function AppPage() {
 
   return (
     <div
-      className="min-h-screen bg-[#111827] text-white p-6 flex flex-col justify-between"
+      className="min-h-screen bg-[#111827] text-white px-4 sm:px-6 py-6 flex flex-col"
       style={{ fontFamily: '"JetBrains Mono", monospace' }}
     >
-      <div>
-        {/* Show button only if no mnemonic */}
+      <div className="w-full max-w-6xl mx-auto">
         {!mnemonic && (
           <div className="mb-6">
             <button
@@ -20,23 +19,20 @@ export default function AppPage() {
                 const mn = await generateMnemonic();
                 setMnemonic(mn);
               }}
-              className="bg-[#1f2937] hover:bg-[#374151] active:bg-[#111827] text-white px-5 py-2 rounded-lg shadow transition"
+              className="bg-[#1f2937] hover:bg-[#374151] active:bg-[#111827] text-white px-6 py-3 text-base rounded-lg shadow transition w-full sm:w-auto"
             >
               Create Seed Phrase
             </button>
           </div>
         )}
 
-        {/* Show seed phrase and wallets only after seed is generated */}
         {mnemonic && (
           <>
-            {/* Seed Phrase */}
-            <div className="text-2xl bg-[#1f2937] text-[#32cd32] p-4 rounded-xl max-w-4xl mb-8 break-words shadow-inner border border-[#2f855a]">
+            <div className="text-lg sm:text-xl bg-[#1f2937] text-[#32cd32] p-4 rounded-xl mb-8 break-words shadow-inner border border-[#2f855a] w-full">
               {mnemonic}
             </div>
 
-            {/* Wallets side-by-side */}
-            <div className="flex flex-col lg:flex-row gap-8 items-start">
+            <div className="flex flex-col lg:flex-row gap-8">
               <div className="w-full lg:w-1/2">
                 <SolanaWallet mnemonic={mnemonic} />
               </div>
