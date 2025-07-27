@@ -2,8 +2,6 @@
 
 A secure, client-side crypto wallet generator for **Solana** and **Ethereum**. Instantly create BIP39-compliant seed phrases and derive multiple wallet addresses — all within your browser.
 
-![screenshot](./src/assests/image.png) <!-- Add your actual screenshot path -->
-
 ---
 
 ## ✨ Features
