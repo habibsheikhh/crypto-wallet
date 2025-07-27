@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -10,3 +11,7 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+=======
+# crypto-wallet
+A secure, client-side wallet generator for Solana and Ethereum. Instantly create seed phrases, manage multiple wallets, and view private keys — all in your browser, with no data ever leaving your device.
+>>>>>>> 51110b1793392ce0b5010a89d09588d446cb1b66
