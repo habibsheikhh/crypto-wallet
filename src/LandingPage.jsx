@@ -5,7 +5,7 @@ export default function LandingPage() {
       style={{ fontFamily: '"JetBrains Mono", monospace' }}
     >
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 leading-tight">
-        🔐 Mohammad Shafique Sheikh
+        🔐 Decentralized Crypto Wallet
       </h1>
 
       <p className="text-gray-400 text-base sm:text-lg text-center max-w-sm sm:max-w-xl mb-8">
